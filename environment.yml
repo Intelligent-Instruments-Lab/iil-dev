@@ -1,0 +1,14 @@
+name: iil-dev
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - ipykernel
+  - pip
+  - pip:
+    - git+https://github.com/intelligent-instruments-lab/anguilla
+    - git+https://github.com/intelligent-instruments-lab/iipyper
+    - git+https://github.com/intelligent-instruments-lab/notochord
+    - git+https://github.com/intelligent-instruments-lab/tolvera
