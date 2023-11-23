@@ -1,0 +1,18 @@
+[submodule "iil-examples"]
+	path = iil-examples
+	url = https://github.com/Intelligent-Instruments-Lab/iil-examples
+[submodule "iipyper"]
+	path = iipyper
+	url = https://github.com/Intelligent-Instruments-Lab/iipyper
+[submodule "anguilla"]
+	path = anguilla
+	url = https://github.com/Intelligent-Instruments-Lab/anguilla
+[submodule "notochord"]
+	path = notochord
+	url = https://github.com/Intelligent-Instruments-Lab/notochord
+[submodule "tolvera"]
+	path = tolvera
+	url = https://github.com/Intelligent-Instruments-Lab/tolvera
+[submodule "iimrp"]
+	path = iimrp
+	url = https://github.com/Intelligent-Instruments-Lab/iimrp
