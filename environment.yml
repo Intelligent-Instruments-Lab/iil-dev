@@ -4,12 +4,10 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
+  - python=3.11.5
   - ipykernel
   - pip
   - pip:
-    - -e anguilla
-    - -e iimrp
-    - -e iipyper
-    - -e notochord
     - -e tolvera
+    - -e iimrp
+    - -e notochord
