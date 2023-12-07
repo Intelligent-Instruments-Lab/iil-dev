@@ -26,8 +26,9 @@ This will create a `conda` environment called `iil-dev` with the `poetry` tool i
 
 You can make with editable installs of the git submodules in this repo by running `poetry install` inside of each project, e.g.
 
-```
+```sh
 cd iil-dev/anguilla
+git checkout main
 poetry install
 ```
 
