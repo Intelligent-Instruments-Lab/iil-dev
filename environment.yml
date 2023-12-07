@@ -1,4 +1,4 @@
-name: iil-dev
+name: iil-dev-env
 channels:
   - pytorch
   - conda-forge
@@ -7,9 +7,4 @@ dependencies:
   - python=3.10
   - ipykernel
   - pip
-  - pip:
-    - -e anguilla
-    - -e iimrp
-    - -e iipyper
-    - -e notochord
-    - -e tolvera
+  - poetry

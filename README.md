@@ -13,24 +13,47 @@ cd iil-dev
 
 ### `conda`
 
-We manage python dependencies with `conda`. If you don't have an anaconda/miniconda python install already, download [the miniconda installer](https://docs.conda.io/en/latest/miniconda.html) or `brew install --cask miniconda` on macOS. Afterwards, verify with `which python` -- it should have `miniconda` in the path.
+We manage python dependencies with `conda`. If you don't have an anaconda/miniconda/miniforge python install already, download [a miniforge installer](https://github.com/conda-forge/miniforge) and run it in a terminal. Afterwards, verify with `which python` -- it should have `miniforge` in the path.
 
 Now set up the `conda` Python environment:
 
 ```sh
 conda env create -f environment.yml
-conda activate iil-dev
+conda activate iil-dev-env
 ```
 
-This will install all dependencies in a `conda` environment called `iil-dev`, with editable installs of the git submodules in this repo so that you can edit them.
+This will create a `conda` environment called `iil-dev` with the `poetry` tool installed.
 
-#### Updating `conda` dependencies
-
-Add new dependencies to `environment.yml`, then run:
+You can make with editable installs of the git submodules in this repo by running `poetry install` inside of each project, e.g.
 
 ```sh
-conda env update -f environment.yml
+cd iil-dev/anguilla
+git checkout main
+poetry install
 ```
+
+Each project is included as a git submodule. This means each project has its own separate git repo and history. You can also make commits to `iil-dev` which track *which commit* of each submodule is currently checked out. When you commit to `iil-dev`, you aren't committing your work on any of the projects -- you are committing a record of their current state *in git*.
+
+So, always remember to commit your changes within each submodule. If you want to pin dev versions of several projects together, make a commit to `iil-dev` on your own branch. If you want to change this README or `environment.yml`, then commit to `main` of `iil-dev`.
+
+#### Updating dependencies
+
+We use `poetry` to manage dependencies. To add a new dependency to a project, `cd` into the project (e.g., `anguilla`, `tolvera`) and use `poetry add`, or edit `pyproject.toml`, then use `poetry install`.
+
+## Test
+
+In a project directory, run `pytest`.
+
+## Release
+
+If you are an owner of a project on PyPI, to make a release:
+
+1. within the project submodule, make a branch for the release, e.g. `git checkout -b v0.1.2`
+2. edit `pyproject.toml` to change any path dependencies to normal pypi dependencies, and update the version number
+3. use `poetry build` to make sure the project builds
+4. add your PyPI API key to poetry using `poetry config pypi-token.pypi <token>`
+5. double check the current version number and use `poetry publish --build`
+
 
 ## Contact
 
