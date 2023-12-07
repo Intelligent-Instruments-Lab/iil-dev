@@ -13,7 +13,7 @@ cd iil-dev
 
 ### `conda`
 
-We manage python dependencies with `conda`. If you don't have an anaconda/miniconda/miniforge python install already, download [a miniforge installer](https://github.com/conda-forge/miniforge) and run it in a terminal. Afterwards, verify with `which python` -- it should have `miniforge` in the path.
+We manage Python versions, non-python dependencies and environments with `conda`. If you don't have an anaconda/miniconda/miniforge python install already, download [a miniforge installer](https://github.com/conda-forge/miniforge) and run it in a terminal. Afterwards, verify with `which python` -- it should have `miniforge` in the path.
 
 Now set up the `conda` Python environment:
 
@@ -38,7 +38,7 @@ So, always remember to commit your changes within each submodule. If you want to
 
 #### Updating dependencies
 
-We use `poetry` to manage dependencies. To add a new dependency to a project, `cd` into the project (e.g., `anguilla`, `tolvera`) and use `poetry add`, or edit `pyproject.toml`, then use `poetry install`.
+We use `poetry` to manage other dependencies. To add a new dependency to a project, `cd` into the project (e.g., `anguilla`, `tolvera`) and use `poetry add`, or edit `pyproject.toml`, then use `poetry install`.
 
 ## Test
 
