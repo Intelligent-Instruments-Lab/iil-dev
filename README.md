@@ -34,7 +34,7 @@ poetry install
 
 Each project is included as a git submodule. This means each project has its own separate git repo and history. You can also make commits to `iil-dev` which track *which commit* of each submodule is currently checked out. When you commit to `iil-dev`, you aren't committing your work on any of the projects -- you are committing a record of their current state *in git*.
 
-So, always remember to commit your changes within each submodule. If you want to pin dev versions of several projects together, or change this README or `environment.yml`, make a commit to `iil-dev`.
+So, always remember to commit your changes within each submodule. If you want to pin dev versions of several projects together, make a commit to `iil-dev` on your own branch. If you want to change this README or `environment.yml`, then commit to `main` of `iil-dev`.
 
 #### Updating dependencies
 
