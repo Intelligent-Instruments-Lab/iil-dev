@@ -1,21 +1,33 @@
 # iil-dev
 
-Development environment for working with [Intelligent Instruments Lab](https://iil.is) tools and repos
+Development environment for working with [Intelligent Instruments Lab](https://iil.is) tools and repos. Use this environment if you anticipate editing multiple Python packages, otherwise it might be simpler for you to `pip install` the individual package(s).
+
+Each project is included as a git submodule. This means each project has its own separate git repo and history. You can also make commits to `iil-dev` which track *which commit* of each submodule is currently checked out. When you commit to `iil-dev`, you aren't committing your work on any of the projects -- you are committing a record of their current state *in git*.
+
+So, always remember to commit your changes within each submodule. If you want to pin dev versions of several projects together, make a commit to `iil-dev` on your own branch. If you want to change this README or `environment.yml`, then commit to `main` of `iil-dev`.
 
 ## Install
 
-Clone the repository:
+Clone with submodules:
 
 ```sh
-git clone https://github.com/Intelligent-Instruments-Lab/iil-dev.git
+git clone --recurse-submodules git@github.com:Intelligent-Instruments-Lab/iil-dev.git
 cd iil-dev
+```
+
+Clone without submodules and then clone the submodules separately:
+
+```sh
+git clone git@github.com:Intelligent-Instruments-Lab/iil-dev.git
+cd iil-dev
+git submodule update --init --recursive
 ```
 
 ### `conda`
 
-We manage Python versions, non-python dependencies and environments with `conda`. If you don't have an anaconda/miniconda/miniforge python install already, download [a miniforge installer](https://github.com/conda-forge/miniforge) and run it in a terminal. Afterwards, verify with `which python` -- it should have `miniforge` in the path.
+We manage Python versions, non-python dependencies and environments with `conda`. If you don't have an anaconda/miniconda/miniforge python install already, download [a miniforge installer](https://github.com/conda-forge/miniforge) and run it in a terminal (we recommend miniconda). Afterwards, verify with `which python` -- it should have `miniforge` in the path.
 
-Now set up the `conda` Python environment:
+Now set up the `conda` Python environment (from within the `iil-dev` directory):
 
 ```sh
 conda env create -f environment.yml
@@ -31,10 +43,6 @@ cd iil-dev/anguilla
 git checkout main
 poetry install
 ```
-
-Each project is included as a git submodule. This means each project has its own separate git repo and history. You can also make commits to `iil-dev` which track *which commit* of each submodule is currently checked out. When you commit to `iil-dev`, you aren't committing your work on any of the projects -- you are committing a record of their current state *in git*.
-
-So, always remember to commit your changes within each submodule. If you want to pin dev versions of several projects together, make a commit to `iil-dev` on your own branch. If you want to change this README or `environment.yml`, then commit to `main` of `iil-dev`.
 
 #### Updating dependencies
 
