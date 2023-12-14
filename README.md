@@ -36,10 +36,12 @@ conda activate iil-dev-env
 
 This will create a `conda` environment called `iil-dev` with the `poetry` tool installed.
 
-You can make with editable installs of the git submodules in this repo by running `poetry install` inside of each project, e.g.
+### Installing individual packages
+
+Now that you have gotten this far, you can make with editable installs of the git submodules in this repo by running `poetry install` inside of each project, e.g.:
 
 ```sh
-cd iil-dev/anguilla
+cd anguilla
 git checkout main
 poetry install
 ```
