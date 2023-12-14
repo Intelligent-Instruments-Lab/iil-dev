@@ -46,7 +46,7 @@ git checkout main
 poetry install
 ```
 
-#### Updating dependencies
+## Updating dependencies
 
 We use `poetry` to manage other dependencies. To add a new dependency to a project, `cd` into the project (e.g., `anguilla`, `tolvera`) and use `poetry add`, or edit `pyproject.toml`, then use `poetry install`.
 
